@@ -17,7 +17,6 @@ jobs:
           - rootfs-image
           - rootfs-initrd
     steps:
-      - uses: actions/checkout@v2
       - name: Install docker
         run: |
           curl -fsSL https://test.docker.com -o test-docker.sh

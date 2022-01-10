@@ -17,6 +17,10 @@ jobs:
           - rootfs-image
           - rootfs-initrd
     steps:
+      - name: chomn file
+        run: |
+          sudo chown -R $USER:$USER /home/github/actions-runner/_work/kata-tdx
+      - uses: actions/checkout@v2
       - name: Install docker
         run: |
           curl -fsSL https://test.docker.com -o test-docker.sh

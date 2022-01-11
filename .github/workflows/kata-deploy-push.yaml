@@ -17,7 +17,7 @@ jobs:
           - rootfs-image
           - rootfs-initrd
     steps:
-      - name: chomn file
+      - name: chomn file access
         run: |
           sudo chown -R $USER:$USER /home/github/actions-runner/_work/kata-tdx
       - uses: actions/checkout@v2

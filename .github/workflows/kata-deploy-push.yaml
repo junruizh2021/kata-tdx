@@ -46,6 +46,9 @@ jobs:
     runs-on: self-hosted
     needs: build-asset
     steps:
+      - name: chomn file
+        run: |
+          sudo chown -R $USER:$USER /home/github/actions-runner/_work/kata-tdx
       - uses: actions/checkout@v2
       - name: get-artifacts
         uses: actions/download-artifact@v2
@@ -64,6 +67,9 @@ jobs:
   make-kata-tarball:
     runs-on: self-hosted
     steps:
+      - name: chomn file
+        run: |
+          sudo chown -R $USER:$USER /home/github/actions-runner/_work/kata-tdx
       - uses: actions/checkout@v2
       - name: make kata-tarball
         run: |

@@ -5,8 +5,11 @@ on:
       - '2.*'
 jobs:
   release-snap:
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     steps:
+      - name: chomn file access
+        run: |
+          sudo chown -R $USER:$USER /home/github/actions-runner/_work/kata-tdx
       - name: Check out Git repository
         uses: actions/checkout@v2
         with:

@@ -2,8 +2,11 @@ name: snap CI
 on: ["pull_request"]
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     steps:
+      - name: chomn files access
+        run: |
+          sudo chown -R $USER:$USER /home/github/actions-runner/_work/kata-tdx
       - name: Check out
         uses: actions/checkout@v2
         with:
